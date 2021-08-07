@@ -1,0 +1,109 @@
+@import "./card";
+@import "./button";
+
+.modalWindow {
+    position: fixed;
+    z-index: 10;
+    padding-top: 64px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modalWindow__modalContent {
+    @include cardStyle(0 auto, 20px, $white, $lradius, none);
+    width: 80%;
+    max-width: 968px;
+}
+.modalContent__closeBtn {
+    display: grid;
+    margin: 16px auto 0;
+}
+.closeBtn__btn {
+    justify-self: end;
+    @include btnStyle($white, $d-blue);
+
+    &:hover {
+        @include btnStyle($white, $blue);
+    }
+}
+.modalContent__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+}
+.contentLeft__avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.avatar__img {
+    display: block;
+    border-radius: $sradius;
+    box-shadow: $shadow;
+}
+.avatar__name {
+    text-align: center;
+    font-size: $fs-big;
+    font-weight: $fw-600;
+    text-transform: uppercase;
+}
+.info__contentRight {
+    background-color: $gray;
+    padding: 20px 40px;
+    border-radius: $sradius;
+}
+.contentRight__title {
+    font-size: $fs-med;
+    font-weight: $fw-600;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto 16px;
+}
+.details__title {
+    font-weight: $fw-600;
+    color: $d-blue;
+}
+.details__desc {
+    text-transform: uppercase;
+}
+@media (min-width: 640px) {
+    .modalWindow__modalContent {
+        width: 70%;
+    }
+}
+@media (min-width: 768px) {
+    .modalWindow {
+        padding-top: 100px;
+    }
+    .modalContent__info {
+        flex-direction: row;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .info__contentLeft {
+        width: 35%;
+    }
+    .info__contentRight {
+        width: 65%;
+    }
+    .modalContent__closeBtn {
+        width: 95%;
+    }
+}
+@media (min-width: 1024px) {
+    .modalWindow__modalContent {
+        width: 70%;
+    }
+}
+@media (min-width: 1281px) {
+    .modalWindow__modalContent {
+        width: 50%;
+    }
+}

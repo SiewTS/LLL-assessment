@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header";
+import CardList from "./components/CardList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [users, setUsers] = useState([]);
+
+    async function fetchData() {
+        let userData;
+        try {
+            const res = await fetch("https://randomuser.me/api/?results=10");
+            userData = (await res.json()).results;
+        } catch (err) {
+            console.log(err);
+            userData = [];
+        }
+        setUsers(userData);
+    }
+
+    return (
+        <>
+            <Header fetchData={fetchData} />
+            <section className="cardSection">
+                <CardList users={users} />
+            </section>
+        </>
+    );
 }
 
 export default App;

@@ -1,0 +1,9 @@
+@import "../variables";
+
+@mixin cardStyle($mg, $pd, $bg, $rad, $bxsdw) {
+    margin: $mg;
+    padding: $pd;
+    background-color: $bg;
+    border-radius: $rad;
+    box-shadow: $bxsdw;
+}

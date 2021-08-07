@@ -1,0 +1,9 @@
+@mixin btnStyle($cl, $bg) {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: $sradius;
+    background-color: $bg;
+    color: $cl;
+    cursor: pointer;
+}
