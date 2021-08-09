@@ -9,6 +9,7 @@
 /coverage
 
 # production
+gulpfile.js
 /build
 
 # misc
