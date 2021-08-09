@@ -1,0 +1,73 @@
+.cardSection__navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.4rem;
+    border-radius: $lradius;
+    background-color: $white;
+}
+.navBar__btnCtn {
+    display: flex;
+    margin-bottom: 0.8rem;
+}
+.btnCtn__navBtn {
+    @include btnStyle($black, transparent);
+    text-decoration: underline;
+
+    &:hover {
+        color: $d-blue;
+        text-decoration: none;
+    }
+}
+.navBar__pagination {
+    display: flex;
+    align-items: center;
+    order: -1;
+    padding: 0.4rem 0.8rem;
+    list-style-type: none;
+}
+.navBar__goto {
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+}
+.navBar__errMsg {
+    margin: 1.15rem auto;
+    color: $red;
+}
+.goto__label {
+    color: $d-gray;
+}
+.goto__input {
+    width: 60px;
+    margin: 0 10px;
+}
+.btn__goBtn {
+    @include btnStyle($white, $blue);
+
+    &:hover {
+        @include btnStyle($white, $d-blue);
+    }
+}
+.pagination__item {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid $d-blue;
+    cursor: pointer;
+
+    &:hover,
+    &--active {
+        background-color: $blue;
+    }
+}
+@media (min-width: 1281px) {
+    .cardSection__navBar {
+        flex-direction: row;
+    }
+    .navBar__btnCtn,
+    .navBar__errMsg {
+        margin: 0;
+    }
+}

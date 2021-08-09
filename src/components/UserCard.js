@@ -25,14 +25,15 @@ const UserCard = ({ userData }) => {
                         </span>
                     </p>
                 </div>
-                <Button
-                    btnCtnClass="flex-ctn__btn-ctn"
-                    btnClass="btn-ctn__btn"
-                    btnText="view user"
-                    onClick={() => {
-                        setModalState(true);
-                    }}
-                />
+                <div className="flex-ctn__btn-ctn">
+                    <Button
+                        btnClass="btn-ctn__btn"
+                        btnText="view user"
+                        onClick={() => {
+                            setModalState(true);
+                        }}
+                    />
+                </div>
             </div>
 
             {showModal && (

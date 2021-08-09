@@ -4,7 +4,7 @@
 .modalWindow {
     position: fixed;
     z-index: 10;
-    padding-top: 64px;
+    // padding-top: 64px;
     left: 0;
     top: 0;
     width: 100%;
@@ -13,13 +13,14 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 .modalWindow__modalContent {
-    @include cardStyle(0 auto, 20px, $white, $lradius, none);
+    @include cardStyle(5rem auto, 20px, $white, $lradius, none);
     width: 80%;
     max-width: 968px;
 }
 .modalContent__closeBtn {
     display: grid;
-    margin: 16px auto 0;
+    width: 95%;
+    margin: 1rem auto 0;
 }
 .closeBtn__btn {
     justify-self: end;
@@ -50,21 +51,22 @@
 }
 .avatar__name {
     text-align: center;
-    font-size: $fs-big;
+    font-size: $fs-med;
     font-weight: $fw-600;
     text-transform: uppercase;
 }
 .info__contentRight {
     background-color: $gray;
-    padding: 20px 40px;
+    padding: 1.1rem 2.5rem;
     border-radius: $sradius;
+    text-align: center;
 }
 .contentRight__title {
     font-size: $fs-med;
     font-weight: $fw-600;
     width: 95%;
     text-align: center;
-    margin: 0 auto 16px;
+    margin: 0 auto 1rem;
 }
 .details__title {
     font-weight: $fw-600;
@@ -78,9 +80,12 @@
         width: 70%;
     }
 }
-@media (min-width: 768px) {
-    .modalWindow {
-        padding-top: 100px;
+@media (min-width: 1024px) {
+    // .modalWindow {
+    //     padding-top: 100px;
+    // }
+    .modalWindow__modalContent {
+        margin: 5rem auto 10rem;
     }
     .modalContent__info {
         flex-direction: row;
@@ -90,20 +95,16 @@
     .info__contentLeft {
         width: 35%;
     }
+    .avatar__name {
+        font-size: $fs-big;
+    }
     .info__contentRight {
         width: 65%;
-    }
-    .modalContent__closeBtn {
-        width: 95%;
-    }
-}
-@media (min-width: 1024px) {
-    .modalWindow__modalContent {
-        width: 70%;
+        text-align: left;
     }
 }
 @media (min-width: 1281px) {
     .modalWindow__modalContent {
-        width: 50%;
+        width: 60%;
     }
 }

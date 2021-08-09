@@ -1,15 +1,16 @@
 import Button from "./Button";
 
-const Header = (props) => {
+const Header = ({ fetchData }) => {
     return (
         <header className="header">
             <h1 className="header__title">Random User Generator</h1>
-            <Button
-                btnCtnClass="header__btnCtn"
-                btnClass="btnCtn__btn"
-                btnText="Get Users"
-                onClick={props.fetchData}
-            />
+            <div className="header__btnCtn">
+                <Button
+                    btnClass="btnCtn__btn"
+                    btnText="Get Users"
+                    onClick={fetchData}
+                />
+            </div>
         </header>
     );
 };

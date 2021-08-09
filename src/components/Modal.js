@@ -50,7 +50,9 @@ const Modal = ({ userData, onClick }) => {
                                     Date of Birth :{" "}
                                 </div>
                                 <span className="details__desc">
-                                    {userData.dob.date}
+                                    {new Date(
+                                        userData.dob.date
+                                    ).toLocaleString()}
                                 </span>
                             </p>
                             <p>
@@ -90,12 +92,13 @@ const Modal = ({ userData, onClick }) => {
                         </div>
                     </div>
                 </div>
-                <Button
-                    btnCtnClass="modalContent__closeBtn"
-                    btnClass="closeBtn__btn"
-                    btnText="close"
-                    onClick={onClick}
-                />
+                <div className="modalContent__closeBtn">
+                    <Button
+                        btnClass="closeBtn__btn"
+                        btnText="close"
+                        onClick={onClick}
+                    />
+                </div>
             </div>
         </div>
     );
